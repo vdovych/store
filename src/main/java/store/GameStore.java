@@ -1,10 +1,14 @@
 package store;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class GameStore {
     private List<ComputerGame> games;
+    public GameStore(){
+        games = new ArrayList<>();
+    }
     public void addGame(ComputerGame game){
         games.add(game);
     }

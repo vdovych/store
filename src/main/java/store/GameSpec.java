@@ -19,12 +19,12 @@ public class GameSpec {
         return (gameSpec.getTyp() == null || gameSpec.getTyp() == typ) &&
                 (gameSpec.getDeveloper() == null || gameSpec.getDeveloper() == developer);
     }
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (obj == this)
-//            return true;
-//        if (obj.getClass() != this.getClass())
-//            return false;
-//        return (((GameSpec)obj).getTyp() == typ && ((GameSpec)obj).getDeveloper() == developer);
-//    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this)
+            return true;
+        if (obj.getClass() != this.getClass())
+            return false;
+        return (((GameSpec)obj).getTyp() == typ && ((GameSpec)obj).getDeveloper() == developer);
+    }
 }
