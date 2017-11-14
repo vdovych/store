@@ -22,11 +22,12 @@ public class GameStore {
     }
     public List<ComputerGame> search(GameSpec searchSpec){
         List<ComputerGame> matches = new LinkedList<>();
-        for (ComputerGame game:
-             games) {
-            if (searchSpec.matches(game.getGameSpec()))
-                matches.add(game);
-        }
+        if(searchSpec != null)
+            for (ComputerGame game:
+                 games) {
+                if (searchSpec.matches(game.getGameSpec()))
+                    matches.add(game);
+            }
         return matches;
     }
 

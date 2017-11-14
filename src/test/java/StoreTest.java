@@ -65,6 +65,10 @@ public class StoreTest {
         ComputerGame game = new ComputerGame(name, releaseDate, spec, price);
         store.addGame(game);
         assertEquals(game, store.search(spec).get(0));
+        store.addGame(game);
+        store.addGame(game);
+        assertEquals(3, store.search(spec).size());
+        assertEquals(0, store.search(null).size());
     }
 
 
