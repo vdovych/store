@@ -5,9 +5,9 @@ import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 
-public class StoreTester {
+public class StoreTest {
     @Test
-    public void testCreatingSpec(){
+    public void TestCreatingSpec(){
         for (int i = 0; i < 100; i++) {
             Typ typ=Typ.ACTION;
             Developer developer=Developer.ACTIVISION;
@@ -30,7 +30,7 @@ public class StoreTester {
         }
     }
     @Test
-    public void testCreatingGame(){
+    public void TestCreatingGame(){
         for (int i = 0;i < 100; i++) {
             String name = String.valueOf(new Random().nextInt());
             String releaseDate = String.valueOf(new Random().nextInt());
@@ -44,7 +44,7 @@ public class StoreTester {
         }
     }
     @Test
-    public void testCreatingStore(){
+    public void TestCreatingStore(){
         GameStore store = new GameStore();
         String name = String.valueOf(new Random().nextInt());
         String releaseDate = String.valueOf(new Random().nextInt());
@@ -56,7 +56,7 @@ public class StoreTester {
         assertEquals(null, store.getGame("name"));
     }
     @Test
-    public void testSearchingStore(){
+    public void TestSearchingStore(){
         GameStore store = new GameStore();
         String name = String.valueOf(new Random().nextInt());
         String releaseDate = String.valueOf(new Random().nextInt());
