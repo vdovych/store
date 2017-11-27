@@ -1,11 +1,15 @@
 package store;
 
+import java.util.LinkedList;
 import java.util.List;
 
-public class Cart {
+public class Cart extends Observable{
     protected List<ComputerGame> games;
     protected PaymentStrategy paymentStrategy;
     protected DelivetyStrategy delivetyStrategy;
+    public Cart(){
+        games = new LinkedList<ComputerGame>();
+    }
     public void add(ComputerGame game){
         games.add(game);
     }
