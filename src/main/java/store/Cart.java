@@ -24,7 +24,6 @@ public class Cart extends Observable{
         }
         return totalPrice;
     }
-
     public PaymentStrategy getPaymentStrategy() {
         return paymentStrategy;
     }

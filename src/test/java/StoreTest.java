@@ -1,8 +1,7 @@
 import org.junit.Test;
 import store.*;
 
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -99,9 +98,16 @@ public class StoreTest {
     }
     @Test
     public void TestDecorators(){
-        CartDecorator bonus = new BonusDecorator(new Cart());
-        CartDecorator discount = new DiscountDecorator(new Cart());
-        assertTrue(true);
+        Cart simple = new Cart();
+        simple.add(new ComputerGame("TestGame","16/11/2017",new GameSpec(Typ.MMORPG, Developer.EA),10));
+        simple.setDelivetyStrategy(new DeliveryNovaPoshta());
+        simple.setPaymentStrategy(new CashPayment());
+        CartDecorator discount = new DiscountDecorator(simple);
+        assertEquals(simple.computeTotalPrice()*0.9,discount.computeTotalPrice(),0.01);
+        assertEquals(simple.ship(),discount.ship());
+        CartDecorator bonus = new BonusDecorator(simple);
+        assertEquals(bonus.computeTotalPrice(),simple.computeTotalPrice(),0.01);
+        assertEquals(bonus.ship(),simple.ship());
     }
 
 
